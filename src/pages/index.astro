@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Button from "../components/Button";
+import BlogPostCard from "../components/BlogPostCard"
+const posts = await Astro.glob('./blog/*.md');
+---
+
+<Layout title="Welcome to Astro.">
+  <div class="space-y-3">
+    <h2 class="font-bold text-3xl">Hai, Saya Stevennius Chandra {"👋"}</h2>
+    <p>Stevennius Chandra adalah seorang siswa SMA di salah satu sekolah yang ada di kota Medan.Dia sudah tertarik dengan pemrograman sejak kecil.Dia pertama kali belajar menulis kode program sejak kelas 8 SMP, sekitar 4 Tahun silam.</p>
+    <Button className="cursor-pointer">
+      <a href="/about" class="cursor-pointer font-semibold text-zinc-700">Whatsapp Contact</a>
+    </Button>
+    <div class="pt-7">
+      <div class="flex gap-3 items-center">
+        <h2 class="text-xl font-bold">Tulisan Saya</h3>
+        <Button className='cursor-pointer'>
+          <a href="/blogs" class="cursor-pointer font-semibold text-zinc-700">Show More</a>
+        </Button>
+      </div>
+      <div class="mt-5 space-y-3">
+        {posts.map(post => <BlogPostCard title={post.frontmatter.title as string} link={post.url as string} icon={post.frontmatter.icon as string}/>)}
+      </div>
+    </div>
+  </div>
+</Layout>
+
+

@@ -1,0 +1,31 @@
+---
+import "@fontsource/inter"
+interface Props {
+	title: string;
+}
+import Nav from "../components/Nav.tsx"
+import Footer from "../components/Footer"
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body class="font-sans">
+    <Nav pathName={Astro.url.pathname} client:load/>
+    <div class="px-4 selection:bg-yellow-300">
+		  <slot />
+      <Footer/>
+    </div>
+	</body>
+</html>
+
+
