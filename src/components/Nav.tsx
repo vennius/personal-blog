@@ -5,9 +5,9 @@ export default function Nav({ pathName }: { pathName: string }) {
   ]
   return (
     <nav className="flex justify-between m-4 items-center">
-      <div>
-        <img src="https://picsum.photos/200" className="w-8 rounded-md" alt="pp" />
-      </div>
+      <a href="/">
+        <img src="/logo.jpg" className="w-8 rounded-md" alt="pp" />
+      </a>
       <div className="flex gap-4 text-gray-600 font-medium">
         {links.map((el, i) => <a href={el.path} key={i} className={pathName == el.path ? "underline text-gray-800 font-semibold" : ""}>{el.name}</a>)}
       </div>

@@ -5,7 +5,6 @@ export default function BlogPostCard({ title, link, icon }: { title: string, lin
         <img className="rounded-md w-12" src={icon} alt="blog post" />
         <p className="text-gray-500 font-semibold">{title}</p>
       </div>
-      <div className="w-[90%] mx-auto h-0.5 bg-slate-900"></div>
     </a>
   )
 }

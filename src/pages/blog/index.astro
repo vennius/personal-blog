@@ -4,7 +4,7 @@ import BlogPostCard from "../../components/BlogPostCard"
 const posts = await Astro.glob('./*.md');
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Blog posts">
   <div class="mt-5 space-y-3">
     {posts.map(post => <BlogPostCard title={post.frontmatter.title as string} link={post.url as string} icon={post.frontmatter.icon as string}/>)}
   </div>
